@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sample Blog</title>
+  <title>Chapter 2 The magic of the central limit theorem: | Sample Blog</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Sample Blog" />
+  <meta property="og:title" content="Chapter 2 The magic of the central limit theorem: | Sample Blog />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sample Blog" />
+  <meta name="twitter:title" content="Chapter 2 The magic of the central limit theorem: | Sample Blog />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="the-magic-of-the-central-limit-theorem.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="CLT-applying.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -98,23 +98,28 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Sample Blog</h1>
-<p class="author"><em>Author Name</em></p>
-<p class="date"><em>2018-12-27</em></p>
-</div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Brief motivation behind the blog</p>
+<div id="the-magic-of-the-central-limit-theorem" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> The magic of the central limit theorem:</h1>
+<div id="sampling-sampling-sampling" class="section level2">
+<h2><span class="header-section-number">2.1</span> Sampling, sampling, sampling…</h2>
+<p>As scientists we aim to understand the world around us, not just our immediate environments. In most cases, we don’t have access to <strong>populations</strong>, for one, because they are… large. For example, if you’re studying expectant mothers, it is virtually impossible to collect data from all of the expectant mothers from around the world. Therefore, we make do with random and representative <em>samples</em> of the population to make generalizations – that is, statements – about the population as a whole.</p>
+<p>The <strong>central limit theorem (CLT)</strong> states that the larger the sample size collected, the closer the distribution of the <em>sample</em> means will resemble a normal distribution (<em>bell curve</em>), regardless of the population’s distribution. <em>If you were asleep during your stats class or need a refresher, Khan Academy gives a good introduction to CLT.</em></p>
+<p>It’s useful to re-read the statement above, because we’re not saying that we’re assuming that the observations (e.g., one sample of with <span class="math inline">\(100\)</span>) originate from a normal distribution. We’re saying that the <em>distribution of sample means</em> (based on taking the mean of many separate samples that originate from the “parent” distribution) will be normally distributed. That is, provided your sample size is “large enough.” The theorem works “in the limit”, as mathematicians say, but a general rule is that the sample size should be at least <span class="math inline">\(30\)</span> for the CLT to hold for almost any data distribution. And, in practice, it will work on smaller samples if they originate from a population that actually has a normal distribution.</p>
+<p>Let’s refresh ourselves with a few terms. <strong>Variance</strong> refers to the amount of variability, or how spread the data are from the mean. The population variance is symbolized as <strong>sigma squared</strong>, or <span class="math inline">\(\sigma^{2}\)</span>. Because variance is a squared term, we tend to look at the square root of variance, or <strong>standard deviation</strong>, and the population standard deviation is symbolized as <span class="math inline">\(\sigma\)</span>, or <strong>sigma</strong>.</p>
+<p>We know that as the size of the sample increases, the closer the <em>sampling distribution of the sample mean will resemble a bell curve with a mean</em> that approaches the population mean, <span class="math inline">\(\mu\)</span>. How about the standard deviation of the distribution of the sample means? As the sample size increases, the CLT says that the standard deviation will approach <span class="math inline">\(\frac{\mathbf{\sigma}}{\sqrt{n}}\)</span>. Again, this results holds despite the shape of the population distribution.</p>
+<p>A good source of intuitive discussion on the central limit theorem is <a href="http://www2.psychology.uiowa.edu/faculty/mordkoff/GradStats/part%201/I.07%20normal.pdf">Mordkoff, J.T. (2016) The Assumption(s) of Normality</a>.</p>
+<hr />
+<p>Post originally by Kelly Morrow and edited by L. Pessoa</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="the-magic-of-the-central-limit-theorem.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="CLT-applying.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

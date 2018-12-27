@@ -1,0 +1,17 @@
+# The magic of the central limit theorem:  
+## Sampling, sampling, sampling...
+
+As scientists we aim to understand the world around us, not just our immediate environments. In most cases, we don't have access to **populations**, for one, because they are... large. For example, if you're studying expectant mothers, it is virtually impossible to collect data from all of the expectant mothers from around the world. Therefore, we make do with random and representative *samples* of the population to make generalizations -- that is, statements -- about the population as a whole.  
+
+The **central limit theorem (CLT)** states that the larger the sample size collected, the closer the distribution of the *sample* means will resemble a normal distribution (*bell curve*), regardless of the population's distribution. *If you were asleep during your stats class or need a refresher, Khan Academy gives a good introduction to CLT.*  
+
+It's useful to re-read the statement above, because we're not saying that we're assuming that the observations (e.g., one sample of with $100$) originate from a normal distribution. We're saying that the *distribution of sample means* (based on taking the mean of many separate samples that originate from the "parent" distribution) will be normally distributed. That is, provided your sample size is "large enough." The theorem works "in the limit", as mathematicians say, but a general rule is that the sample size should be at least $30$ for the CLT to hold for almost any data distribution. And, in practice, it will work on smaller samples if they originate from a population that actually has a normal distribution.  
+
+Let's refresh ourselves with a few terms. **Variance** refers to the amount of variability, or how spread the data are from the mean. The population variance is symbolized as **sigma squared**, or $\sigma^{2}$. Because variance is a squared term, we tend to look at the square root of variance, or **standard deviation**, and the population standard deviation is symbolized as $\sigma$, or **sigma**.  
+
+We know that as the size of the sample increases, the closer the *sampling distribution of the sample mean will resemble a bell curve with a mean* that approaches the population mean, $\mu$. How about the standard deviation of the distribution of the sample means? As the sample size increases, the CLT says that the standard deviation will approach $\frac{\mathbf{\sigma}}{\sqrt{n}}$. Again, this results holds despite the shape of the population distribution.
+
+A good source of intuitive discussion on the central limit theorem is [Mordkoff, J.T. (2016) The Assumption(s) of Normality](http://www2.psychology.uiowa.edu/faculty/mordkoff/GradStats/part%201/I.07%20normal.pdf).
+
+***
+Post originally by Kelly Morrow and edited by L. Pessoa
