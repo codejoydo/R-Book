@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 3 Applying the Central Limit Theorem | Sample Blog</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 3 Applying the Central Limit Theorem | Sample Blog />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Applying the Central Limit Theorem | Sample Blog />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Author Name">
+
+
+<meta name="date" content="2018-12-27">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="the-magic-of-the-central-limit-theorem.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="the-magic-of-the-central-limit-theorem.html"><a href="the-magic-of-the-central-limit-theorem.html"><i class="fa fa-check"></i><b>2</b> The magic of the central limit theorem:</a><ul>
+<li class="chapter" data-level="2.1" data-path="the-magic-of-the-central-limit-theorem.html"><a href="the-magic-of-the-central-limit-theorem.html#sampling-sampling-sampling"><i class="fa fa-check"></i><b>2.1</b> Sampling, sampling, sampling…</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="CLT-applying.html"><a href="CLT-applying.html"><i class="fa fa-check"></i><b>3</b> Applying the Central Limit Theorem</a><ul>
+<li class="chapter" data-level="3.1" data-path="CLT-applying.html"><a href="CLT-applying.html#an-example"><i class="fa fa-check"></i><b>3.1</b> An example</a></li>
+<li class="chapter" data-level="3.2" data-path="CLT-applying.html"><a href="CLT-applying.html#central-limit-theorem"><i class="fa fa-check"></i><b>3.2</b> Central Limit Theorem</a></li>
+<li class="chapter" data-level="3.3" data-path="CLT-applying.html"><a href="CLT-applying.html#samples"><i class="fa fa-check"></i><b>3.3</b> Samples</a></li>
+<li class="chapter" data-level="3.4" data-path="CLT-applying.html"><a href="CLT-applying.html#hypothesis-testing"><i class="fa fa-check"></i><b>3.4</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="3.5" data-path="CLT-applying.html"><a href="CLT-applying.html#the-flaw-in-the-z-test"><i class="fa fa-check"></i><b>3.5</b> The flaw in the z-test</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sample Blog</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="CLT_applying" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Applying the Central Limit Theorem</h1>
+<div id="an-example" class="section level2">
+<h2><span class="header-section-number">3.1</span> An example</h2>
+<p>According the National Center for Health Statistics, the distribution of serum cholesterol levels for 20 to 74-year-old males living in the United States has mean 211 mg/dl, and a standard deviation of 46 mg/dl. We are planning to collect a sample of 25 individuals and measure their cholesterol levels.</p>
+<p>We are interested in the following about the sample:</p>
+<ol style="list-style-type: decimal">
+<li>What is the probability that our sample mean will be above a certain limit, say 230?</li>
+<li>What is the 95% confidence interval of our sample means?</li>
+<li>How do these vary as we collect more samples? Does the probability increase or decrease? Does the size of the confidence interval increase or decrease? By what factor does it increase or decrease?</li>
+<li>Finally, how large would the sample size have to be to ensure a 95% probability that the sample average is within 5 mg/dl of the population mean?</li>
+</ol>
+<p><em>How does the Central Limit Theorem (CLT) help us answer these questions?</em></p>
+<hr />
+</div>
+<div id="central-limit-theorem" class="section level2">
+<h2><span class="header-section-number">3.2</span> Central Limit Theorem</h2>
+<p>Given a population with a finite mean <span class="math inline">\(\mu\)</span> and a finite non-zero standard deviation <span class="math inline">\(\sigma\)</span>, the distribution of the sample means approaches a normal distribution as the sample size increases.</p>
+<p>The mean of the sample means is given by</p>
+<p><span class="math display">\[\mu_{\bar{X}} = \mu,\]</span></p>
+<p>and the standard deviation of the sample means (also referred to as the standard error of the mean) is given by</p>
+<p><span class="math display">\[\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{N}}.\]</span></p>
+<p>For a more precise version of CLT, please refer <a href="http://mathworld.wolfram.com/CentralLimitTheorem.html">Wolfram</a>.</p>
+<p>An important observation is that no assumptions are made about the distribution of the parental population. It could be discrete or continuous, severely skewed, but as long as the mean and standard deviation are finite, CLT holds. To convince yourself of this, please take a look at examples <a href="http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_Probability/BS704_Probability12.html">here</a> or use the simulator <a href="http://onlinestatbook.com/stat_sim/sampling_dist/index.html">here</a>.</p>
+<hr />
+</div>
+<div id="samples" class="section level2">
+<h2><span class="header-section-number">3.3</span> Samples</h2>
+<p>But what is a <strong>sample</strong>? We keep using that word, and its meaning is quite an important concept. A sample is a random draw of size N of data from the parent distribution. We obtain a sample of data every time we randomly draw from what we conceptualize as the population of interest. If the population of interest in every student at UMD, then a random draw is obtained by any mechanism that (truly) randomly draws from it (think of an imaginary lottery machine that, after spinning it, we can obtain one student at a time).</p>
+<p>And the <strong>sample mean</strong>? The sample mean is just the average of the measure of interest from the <span class="math inline">\(N\)</span> units that were sampled. So for each mean, we get exactly one sample mean.</p>
+<p>When we’re thinking about the CLT (what it means), we need to think of repeating this process many times to have <em>multiple sample means</em>. Remember, that each sample has <span class="math inline">\(N\)</span> units. So for each mean, you need to sample a group of size <span class="math inline">\(N\)</span>. This is what the CLT talks about.</p>
+<p>One reason this might appear confusing is that in any one given study, we only sample once (with size <span class="math inline">\(N\)</span>). That’s the world the experimenter lives in (except it she repeats her experiment). But that’s not the world of the CLT, which instead is a world in which we perform an experiment (a sample draw of size <span class="math inline">\(N\)</span>), over and over. And a few more times…</p>
+<hr />
+<p>Back to the previous questions. To answer them, it is essential to know the <em>sampling distribution</em>, that is, the <em>distribution</em> of the sample mean.</p>
+<p><em>Since the standard deviation of the parent population is known, from CLT it follows that the sampling distribution (<span class="math inline">\(N=25\)</span>) has a mean <span class="math inline">\(\mu_{\bar{X}} = 211\)</span> mg/dl, and standard deviation (this is called standard error) <span class="math inline">\(\sigma_{\bar{X}} = \frac{46}{\sqrt{25}} = 9.2.\)</span> Note that the standard error reduces as the number of samples increase by a factor <span class="math inline">\(\sqrt{N}.\)</span> </em>Our limit, <span class="math inline">\(230\)</span> mg/dl, is therefore <span class="math inline">\(\frac{230 - 211}{9.2} = 2.07\)</span> standard deviations away from the mean. In other words, the z-score associated with the limit 230 mg/dl is 2.07.</p>
+<p>1.The answer to our first question is simple the probability that a normally distributed random variable is greater than 2.07 standard deviations away from the mean = 1.9% (or 0.019). 2.For a normally distributed random variable, 95% of the values lie within 1.96 standard deviations of its mean (on either side). The standard deviation remains the same, 9.2. Thus, the 95% confidence interval is simply, 211 - 1.96(9.2) = 193.0 to 211 + 1.96(9.2) = 229.0. 3.Suppose we had only 10 samples. Verify that the new standard error would be 14.5 and the z-score associated with the limit, 230 mg/dl, would be 1.31. The probability of our sample mean being over 230 would thus be 9.6% (almost 5 times higher). On the other hand, our confidence interval would be much larger with 10 samples; (182.5, 239.5). How about if we had 50 samples? This would result is a narrower confidence interval (198.2, 223.8) since the standard error is smaller. 4.To answer our final question, we need 1.96 standard deviations of the sampling distribution to amount to 5 mg/dl. Thus, the standard error should be  <span class="math inline">\(\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{N}} = 5/1.96.\)</span> Since, we know <span class="math inline">\(\sigma\)</span>, N = 325.1. We would need at least 326 samples to ensure this confidence interval.</p>
+</div>
+<div id="hypothesis-testing" class="section level2">
+<h2><span class="header-section-number">3.4</span> Hypothesis Testing</h2>
+<p>Thinking along these lines can be used to develop hypothesis tests and understand p-values. We start again with an example:</p>
+<p>Cystic fibrosis is a genetic disease that affects lung function. Forced vital capacity (FVC) is the volume of air that a person can expel from the lungs in 6 seconds. It is often used as a marker of the progression of cystic fibrosis. 14 participants received both a drug and placebo (at different times), and their FVC was measured at the beginning and end of each treatment period. In the study, the mean difference in reduction in FVC (placebo - drug) was 137, with a sample standard deviation 223. Does the drug have a significant effect?</p>
+<p>The null hypothesis is that the drug has no effect, thus the reduction in FVC should be zero. Let’s first find the probability of observing an FVC reduction of greater than 137 given the null hypothesis.</p>
+<p>We calculate the standard error based on the 14 participants as <span class="math inline">\(\sigma_{\bar{X}} = \frac{223}{\sqrt{14}} = 60.\)</span> The z-score associated with the mean reduction in FVC is given by (137 - 0)/60 = 2.28. The probability of observing a value further from the mean by at least 2.28 standard deviations, which is also the p-value, which is 2.2% (or 0.022).</p>
+<p>This is a small probability that the drug is having an effect just by chance. Why did we obtain a small probability? Because it’s effect by chance should be zero. But because we’re working with a sample (<span class="math inline">\(N=14\)</span>) that is randomly drawn from the population, the observed mean reduction will fluctuate from sample to sample. Based on data from our sample, the reduction was 137. But how large is 137? We don’t know without some form of calibration, which can be obtained by the information that was given to us: <span class="math inline">\(\sigma_{\bar{X}}\)</span>.</p>
+<p>From these data, we can believe that the drug helps prevent deterioration in lung function. At least the data are consistent with this notion in a probabilistic sense. Another way to think about this, it would be somewhat irrational to think that we could obtain the observed result just by chance. Maybe not entirely with a p of basically 2/100 but probably with a p of 1/1000. But obviously this is somewhat subjective.</p>
+</div>
+<div id="the-flaw-in-the-z-test" class="section level2">
+<h2><span class="header-section-number">3.5</span> The flaw in the z-test</h2>
+<p>Is the above reasoning correct? To understand this we need to understand the difference between the first and second examples.</p>
+<p>In our first example, an oracle provided us with the standard deviation of the population. Some all-knowing being told us what the population <span class="math inline">\(\sigma\)</span> was. But in the second example the standard error was based on the sample. To make the distinction clear, we call the standard error based on sample data <span class="math inline">\(s_{\bar{X}}\)</span>.</p>
+<p><em>Important aside</em>: why use the sample and not the population? Populations are essentially Platonic objects. We typically don’t have complete knowledge about the objects we want to study. If we did we woulnd’t need to study them in the first place! So we have to draw samples and do the best based on finite amounts of data. Another way to think about this is that oracles don’t walk around waiting to be interrogated. Maybe they were around in ancient Greece, but not anymore…</p>
+<p>Gossett (which published under the pseudonym Student) showed that when the standard error is estimated from sample data, the statistic <span class="math inline">\(\frac{\bar{x} - \mu}{\sigma_{\bar{X}}}\)</span> is not normal, but follows a t distribution with N - 1 degrees of freedom (df). The t distribution looks very much like a normal, but has what we call heavier tails, that is, more mass along the tails relative to the normal.</p>
+<p>Thus, the probability associated with a t-score of 2.28 with 14 - 1 degrees of freedom can be calculated to be 4% (or 0.04). The p-value obtained from the z-test (2.2%) overstates the evidence against the null hypothesis (this is consistent with the fact that a normal is thinner along the tails than the t distribution).</p>
+<hr />
+<p>Examples are borrowed from <a href="http://myweb.uiowa.edu/pbreheny/4120/s18/index.html">Introduction to Biostatistics</a> kindly offered by Patrick Breheny at UIowa.</p>
+<p>Post by Manasij Venkatesh, with edits by L. Pessoa.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-magic-of-the-central-limit-theorem.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["SampleBook.pdf", "SampleBook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
